@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="../img/logo.jpg">
+    <link rel="stylesheet" href="../main.css">
+
+    <title>Inicio de sesión</title>
+  </head>
+  <body>
+
+    <div class="container w-100 mt-3 rounded border">
+      <div class="row">
+        <div class="col bg-primary rounded d-none d-lg-block">
+          <img src="../img/logo.jpg" class="img-fluid">
+
+        </div>
+        <div class="col rounded p-5">
+          <div class="text-end">
+            <img src="../img/logo.jpg" class="rounded-circle" width="60px" alt="">
+          </div>
+
+          <h2 class="fw-bold text-center py-5">Modificar contraseña (Temporal)</h2>
+
+          <!--LOGIN -->
+
+          <form method="post" action ="../servidor/operacion_modificar.php">
+            <div class="mb-4">
+              <label for="codigo" class="form-label">Código estudiantil</label>
+              <input type="codigo" class="form-control" name="codigo">
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label">Nueva contraseña</label>
+              <input type="password" class="form-control" name="contrasena">
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" name="enviar" value="Ingresar" class="btn btn-light" >Cambiar contraseña</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
