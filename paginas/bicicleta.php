@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+$usuario;
+
+if(isset($_SESSION['usuario'])){
+    $usuario = $_SESSION['usuario'];
+}
+
+print_r($usuario);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +52,7 @@
             <ul class="navbar-nav ms-auto">
                     <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo $_GET['codigo']; ?>
+                        <?php echo $usuario["Codigo"]; ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../index.html">Cerrar sesión</a>
@@ -61,19 +75,19 @@
             <nav class="navbar navbar-nav bg-dark border border-primary border-3">
                 <ul class="nav navbar-nav ml-auto text-center">
                     <li class="nav-item border ">
-                        <a class="nav-link text-white " href="./usuario.php?codigo=<?php echo $_GET['codigo']; ?>"> Mi cuenta </a>
+                        <a class="nav-link text-white " href="./usuario.php"> Mi cuenta </a>
                     </li>
                     <li class="nav-item border border-primary bg-primary">
-                        <a class="nav-link text-white" href="./bicicleta.php?codigo=<?php echo $_GET['codigo']; ?>"> Mi bicicleta </a>
+                        <a class="nav-link text-white" href="./bicicleta.php"> Mi bicicleta </a>
                     </li>
                     <li class="nav-item border">
-                        <a class="nav-link text-white" href="./registros.php?codigo=<?php echo $_GET['codigo']; ?>"> Mis registros </a>
+                        <a class="nav-link text-white" href="./registros.php"> Mis registros </a>
                     </li>
                     <li class="nav-item border">
-                        <a class="nav-link text-white" href="./cupos.php?codigo=<?php echo $_GET['codigo']; ?>"> Cupos disponibles </a>
+                        <a class="nav-link text-white" href="./cupos.php"> Cupos disponibles </a>
                     </li>
                     <li class="nav-item border">
-                        <a class="nav-link text-white" href="./contacto.php?codigo=<?php echo $_GET['codigo']; ?>"> Contáctenos </a>
+                        <a class="nav-link text-white" href="./contacto.php"> Contáctenos </a>
                     </li>
                 </ul>
             </nav>

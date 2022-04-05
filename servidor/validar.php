@@ -8,17 +8,22 @@ $password = $_POST["password"];
 
 //Iniciamos la sesión
 session_start();
-//Se le asigna el nombre obtenido anteriormente
-$_SESSION["UserName"] = $codigo;
+
+
 
 
 $consulta = "SELECT * FROM Usuarios WHERE Codigo='$codigo' and Contrasena='$password'";
 $resultado = mysqli_query($conexion, $consulta);
 
-$filas = mysqli_num_rows($resultado); //hace la validacion 
+$row = mysqli_fetch_assoc($resultado);
+
+$filas = mysqli_num_rows($resultado); //hace la validacion
+
+$_SESSION["usuario"] = $row;
 
 if($filas){
-    header("location:../paginas/usuario.php?codigo=$codigo");
+    //header("location:../paginas/usuario.php?codigo=$codigo&usuario=".urlencode(serialize($row)));
+    header("location:../paginas/usuario.php");
 }else{
     header("location:../paginas/informacion.php?mensaje=Datos erroneos&boton=Intentar de nuevo");
 }
